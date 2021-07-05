@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <H2>Details</H2>
+        <div class="slds-box">
+            <lightning-card  if:true={accData} >
+                <h6 slot="title">
+                    <lightning-icon icon-name="custom:custom11" size="small"></lightning-icon>
+                    {accData.Name}
+                    <lightning-button class="slds-m-left_large" label="Full details" onclick={navigateToDetails}></lightning-button>
+                </h6>
+                <p class="slds-p-horizontal_small"  if:true={accData}>
+                    Account Type:  {accData.Type} </br>
+                    Budget: ${accData.Budget__c}
+                </p>
+            </lightning-card>
+        </div>
+    </lightning-card>
+</template>

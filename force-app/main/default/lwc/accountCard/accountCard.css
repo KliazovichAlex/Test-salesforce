@@ -1,0 +1,12 @@
+.card {
+    width: 200px;
+    display:flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.card-img{
+    width:200px;
+    height: 200px;
+    background-color: aquamarine;
+}

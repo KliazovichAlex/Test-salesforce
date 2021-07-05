@@ -1,0 +1,37 @@
+<template>
+    <lightning-card>
+        <div class="slds-card__header ">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-text-heading_medium">
+                        Find an account
+                    </h2>
+                </div>
+            </header>
+        </div>
+        
+        <div class="slds-box">
+            <lightning-combobox
+                name="type"
+                value={value}
+                placeholder="Select Progress"
+                options={options}
+                onchange={onSetOption}
+               >
+            </lightning-combobox>
+        </div>
+
+        
+        <div class="slds-m-around_small viewStyle" >
+            <template if:true={accounts} for:each={accounts} for:item="account">
+                <div key={account.Id}>
+                   <c-account-card my-data={account}></c-account-card>
+                </div>
+            </template>
+        </div>
+        <h1>All budgets sum is (Query) : {budgetSumQuery}</h1>
+        <h1>All budgets sum is (JS) : {budgetSumJs}</h1>
+        <h1>All budgets sum is (Apex) : {budgetSum}</h1>
+
+    </lightning-card>
+</template>
